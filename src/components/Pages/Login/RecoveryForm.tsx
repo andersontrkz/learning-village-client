@@ -11,12 +11,12 @@ export default function RecoveryForm({ setAction }: RecoveryFormProps) {
   return (
     <>
       <LeftHeader title="REDEFINIR A SENHA" subtitle="E-MAIL" backtitle="SENHA" />
-      <Text textAlign="center" fontSize="14px">
+      <Text textAlign="center" fontSize="13px" fontFamily="Montserrat">
         Insira seu e-mail cadastrado na plataforma. Enviaremos um código para seu e-mail para a
         redefinição de senha.
       </Text>
-      <FormControl id="email" style={{ marginBottom: '32px' }}>
-        <FormLabel>E-mail</FormLabel>
+      <FormControl id="email" style={{ marginBottom: '32px', marginTop: '20px' }}>
+        <FormLabel fontSize="24px">E-mail</FormLabel>
         <Input
           type="email"
           rounded="none"
@@ -33,6 +33,8 @@ export default function RecoveryForm({ setAction }: RecoveryFormProps) {
           textColor="var(--primary-color)"
           textDecoration="underline"
           fontWeight="bold"
+          fontFamily="Montserrat"
+          fontSize="12px"
           _hover={{
             textColor: 'var(--primary-color-alt)',
           }}

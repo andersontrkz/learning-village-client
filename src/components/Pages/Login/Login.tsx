@@ -20,7 +20,7 @@ export const Login = () => {
         justify={'center'}
         backgroundColor="--main-background-color"
       >
-        <Stack spacing={6} w={'full'} minW={{ base: '64', md: '64', lg: '96' }}>
+        <Stack w={'full'} minW={{ base: '64', md: '64', lg: '96' }}>
           {action === 'login' ? (
             <LoginForm setAction={setAction} />
           ) : (

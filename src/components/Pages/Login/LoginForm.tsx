@@ -14,8 +14,11 @@ export default function LoginForm({ setAction }: LoginFormProps) {
     <>
       <LeftHeader title="ENTRAR NA SUA CONTA" subtitle="LOGIN" backtitle="LOGIN" />
       <FormControl id="email">
-        <FormLabel>E-mail</FormLabel>
+        <FormLabel fontSize="24px" mb="4">
+          E-mail
+        </FormLabel>
         <Input
+          mb="6"
           type="email"
           rounded="none"
           placeholder="email@learningvillage.com"
@@ -23,8 +26,11 @@ export default function LoginForm({ setAction }: LoginFormProps) {
         />
       </FormControl>
       <FormControl id="password">
-        <FormLabel>Senha</FormLabel>
+        <FormLabel fontSize="24px" mb="4">
+          Senha
+        </FormLabel>
         <Input
+          mb="4"
           type="password"
           rounded="none"
           placeholder="********"
@@ -36,6 +42,8 @@ export default function LoginForm({ setAction }: LoginFormProps) {
         textColor="var(--primary-color)"
         textDecoration="underline"
         fontWeight="bold"
+        fontFamily="Montserrat"
+        fontSize="12px"
         _hover={{
           textColor: 'var(--primary-color-alt)',
         }}
@@ -43,9 +51,17 @@ export default function LoginForm({ setAction }: LoginFormProps) {
       >
         Esqueci minha senha
       </Link>
+      <br />
       <ActionButton action="ENTRAR" />
-      <Text alignSelf="center">Ou fazer login com</Text>
-      <Flex alignContent="center" justifyContent="center">
+      <Text
+        alignSelf="center"
+        fontFamily="Montserrat"
+        fontSize="16px"
+        style={{ marginTop: '48px' }}
+      >
+        Ou fazer login com
+      </Text>
+      <Flex alignContent="center" justifyContent="center" style={{ marginTop: '24px' }}>
         <IconButton
           aria-label="Search database"
           icon={<FontAwesomeIcon icon={faMicrosoft} />}

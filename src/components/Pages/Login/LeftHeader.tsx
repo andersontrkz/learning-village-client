@@ -8,21 +8,15 @@ type LeftHeaderProps = {
 
 export default function LeftHeader({ title, subtitle, backtitle }: LeftHeaderProps) {
   return (
-    <Heading fontSize={{ base: 'l', md: 'xl', lg: 'xl' }} mb="8">
-      <Box
-        zIndex="-1"
-        position="absolute"
-        fontSize={{ base: '170', sm: '180', md: '200', lg: '200' }}
-        ml="-60"
-        mt="-24"
-        opacity="0.1"
-      >
+    <Heading fontSize={{ base: 'l', md: 'xl', lg: 'xl' }} mb="16">
+      <Box zIndex="-1" position="absolute" fontSize="280px" ml="-140" mt="-36" opacity="0.1">
         <Text>{backtitle}</Text>
       </Box>
       <Text
         as={'span'}
         position={'relative'}
         color="var(--primary-color)"
+        fontSize="38px"
         _after={{
           content: "''",
           width: 'full',
@@ -35,7 +29,10 @@ export default function LeftHeader({ title, subtitle, backtitle }: LeftHeaderPro
       >
         {title}
       </Text>
-      <br /> <Text as={'span'}>{subtitle}</Text>{' '}
+      <br />{' '}
+      <Text as={'span'} fontSize="28px">
+        {subtitle}
+      </Text>{' '}
     </Heading>
   );
 }
