@@ -1,9 +1,18 @@
-import { Flex, Text, FormControl, FormLabel, Input, IconButton, Link } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  FormControl,
+  FormLabel,
+  Input,
+  IconButton,
+  Link,
+  Button,
+} from '@chakra-ui/react';
 import { faMicrosoft, faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import ActionButton from './ActionButton';
-import LeftHeader from './LeftHeader';
+import Header from './Header';
 
 type LoginFormProps = {
   setAction: (action: string) => void;
@@ -12,11 +21,9 @@ type LoginFormProps = {
 export default function LoginForm({ setAction }: LoginFormProps) {
   return (
     <>
-      <LeftHeader title="ENTRAR NA SUA CONTA" subtitle="LOGIN" backtitle="LOGIN" />
+      <Header title="ENTRAR NA SUA CONTA" subtitle="LOGIN" backtitle="LOGIN" />
       <FormControl id="email">
-        <FormLabel fontSize="24px" mb="4">
-          E-mail
-        </FormLabel>
+        <FormLabel fontSize="24px">E-mail</FormLabel>
         <Input
           mb="6"
           type="email"
@@ -26,9 +33,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
         />
       </FormControl>
       <FormControl id="password">
-        <FormLabel fontSize="24px" mb="4">
-          Senha
-        </FormLabel>
+        <FormLabel fontSize="24px">Senha</FormLabel>
         <Input
           mb="4"
           type="password"
@@ -52,7 +57,23 @@ export default function LoginForm({ setAction }: LoginFormProps) {
         Esqueci minha senha
       </Link>
       <br />
-      <ActionButton action="ENTRAR" />
+      <Button
+        bg={'var(--primary-color)'}
+        textColor={'var(--white-color)'}
+        rounded="none"
+        rightIcon={<FontAwesomeIcon icon={faChevronRight} />}
+        width={{ base: '2xs', sm: '2xs', md: '3xs', lg: '3xs' }}
+        alignSelf="center"
+        pt="4"
+        pb="4"
+        _hover={{
+          bg: 'var(--primary-color-alt)',
+          transition: '.9s',
+        }}
+        onClick={() => alert('Clicou!')}
+      >
+        ENTRAR
+      </Button>
       <Text
         alignSelf="center"
         fontFamily="Montserrat"
@@ -74,6 +95,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
             color: 'var(--white-color)',
             transition: '.9s',
           }}
+          onClick={() => alert('Clicou!')}
         />
         <IconButton
           aria-label="Search database"
@@ -87,6 +109,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
             color: 'var(--white-color)',
             transition: '.9s',
           }}
+          onClick={() => alert('Clicou!')}
         />
       </Flex>
     </>

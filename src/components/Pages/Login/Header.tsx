@@ -1,15 +1,15 @@
 import { Text, useBreakpointValue, Heading, Box } from '@chakra-ui/react';
 
-type LeftHeaderProps = {
+type HeaderProps = {
   title: string;
   subtitle: string;
   backtitle: string;
 };
 
-export default function LeftHeader({ title, subtitle, backtitle }: LeftHeaderProps) {
+export default function Header({ title, subtitle, backtitle }: HeaderProps) {
   return (
-    <Heading fontSize={{ base: 'l', md: 'xl', lg: 'xl' }} mb="16">
-      <Box zIndex="-1" position="absolute" fontSize="280px" ml="-140" mt="-36" opacity="0.1">
+    <Heading fontSize={{ base: 'l', md: 'xl', lg: 'xl' }} mb="16" mt="12">
+      <Box zIndex="-1" position="absolute" fontSize="280px" ml="-165" mt="-36" opacity="0.1">
         <Text>{backtitle}</Text>
       </Box>
       <Text

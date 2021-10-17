@@ -1,16 +1,32 @@
 import { Flex, VStack, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
 import { useState } from 'react';
 
+import ConfirmForm from './ConfirmForm';
 import LoginForm from './LoginForm';
 import RecoveryForm from './RecoveryForm';
+import RedefinitionForm from './RedefinitionForm';
 
 export const Login = () => {
   const [action, setAction] = useState('login');
 
+  const selectActionForm = () => {
+    switch (action) {
+      case 'login':
+        return <LoginForm setAction={setAction} />;
+      case 'recovery':
+        return <RecoveryForm setAction={setAction} />;
+      case 'confirm':
+        return <ConfirmForm setAction={setAction} />;
+      case 'redefinition':
+        return <RedefinitionForm setAction={setAction} />;
+    }
+  };
+
   return (
     <Stack
       minH={'100vh'}
-      direction={{ base: 'column', md: 'row' }}
+      maxH={{ md: '100vh' }}
+      direction={{ base: 'column-reverse', md: 'row' }}
       backgroundColor="--main-background-color"
     >
       <Flex
@@ -21,17 +37,13 @@ export const Login = () => {
         backgroundColor="--main-background-color"
       >
         <Stack w={'full'} minW={{ base: '64', md: '64', lg: '96' }}>
-          {action === 'login' ? (
-            <LoginForm setAction={setAction} />
-          ) : (
-            <RecoveryForm setAction={setAction} />
-          )}
+          {selectActionForm()}
         </Stack>
       </Flex>
 
       <Flex
         w={'full'}
-        h={'100vh'}
+        h={{ base: '30vh', md: '100vh' }}
         backgroundImage={'https://blogs.esa.int/space19plus/files/2019/03/nebula.jpg'}
         backgroundSize={'cover'}
         backgroundPosition={'center center'}

@@ -1,27 +1,26 @@
-import { Flex, Center, FormControl, FormLabel, Input, Link, Text, Button } from '@chakra-ui/react';
+import { Center, FormControl, FormLabel, Input, Link, Text, Button } from '@chakra-ui/react';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Header from './Header';
 
-type RecoveryFormProps = {
+type ConfirmFormFormProps = {
   setAction: (action: string) => void;
 };
 
-export default function RecoveryForm({ setAction }: RecoveryFormProps) {
+export default function ConfirmForm({ setAction }: ConfirmFormFormProps) {
   return (
     <>
-      <Header title="REDEFINIR A SENHA" subtitle="E-MAIL" backtitle="SENHA" />
+      <Header title="REDEFINIR A SENHA" subtitle="VERIFIQUE SEU E-MAIL" backtitle="SENHA" />
       <Text textAlign="center" fontSize="13px" fontFamily="Montserrat">
-        Insira seu e-mail cadastrado na plataforma. Enviaremos um código para seu e-mail para a
-        redefinição de senha.
+        Enviamos um e-mail com o código de confirmação para a seuemail@learningvillage.com
       </Text>
       <FormControl id="email" style={{ marginBottom: '32px', marginTop: '20px' }}>
-        <FormLabel fontSize="24px">E-mail</FormLabel>
+        <FormLabel fontSize="24px">Código de confirmação</FormLabel>
         <Input
-          type="email"
+          type="text"
           rounded="none"
-          placeholder="email@learningvillage.com"
+          placeholder="_ _ _ _ _ _"
           borderColor="var(--black-color)"
         />
       </FormControl>
@@ -39,14 +38,18 @@ export default function RecoveryForm({ setAction }: RecoveryFormProps) {
             bg: 'var(--primary-color-alt)',
             transition: '.9s',
           }}
-          onClick={() => setAction('confirm')}
+          onClick={() => setAction('redefinition')}
         >
-          REDEFINIR A SENHA
+          CONFIRMAR O CÓDIGO
         </Button>
       </Center>
-      <Flex alignContent="center" justifyContent="center">
+      <Center>
+        <Text fontFamily="Montserrat" fontSize="12px">
+          Não recebeu?
+        </Text>
+      </Center>
+      <Center>
         <Link
-          alignSelf="center"
           textColor="var(--primary-color)"
           textDecoration="underline"
           fontWeight="bold"
@@ -55,11 +58,11 @@ export default function RecoveryForm({ setAction }: RecoveryFormProps) {
           _hover={{
             textColor: 'var(--primary-color-alt)',
           }}
-          onClick={() => setAction('login')}
+          onClick={() => alert('Clicou!')}
         >
-          Voltar ao login
+          Enviar novamente
         </Link>
-      </Flex>
+      </Center>
     </>
   );
 }
