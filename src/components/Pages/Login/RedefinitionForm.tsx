@@ -9,6 +9,11 @@ type RedefinitionFormFormProps = {
 };
 
 export default function RedefinitionForm({ setAction }: RedefinitionFormFormProps) {
+  const reloadLogin = () => {
+    setAction('reload');
+    setTimeout(() => setAction('login'), 3000);
+  };
+
   return (
     <>
       <Header
@@ -48,7 +53,7 @@ export default function RedefinitionForm({ setAction }: RedefinitionFormFormProp
             bg: 'var(--primary-color-alt)',
             transition: '.9s',
           }}
-          onClick={() => setAction('login')}
+          onClick={reloadLogin}
         >
           REDEFINIR A SENHA
         </Button>

@@ -8,8 +8,19 @@ type HeaderProps = {
 
 export default function Header({ title, subtitle, backtitle }: HeaderProps) {
   return (
-    <Heading fontSize={{ base: 'l', md: 'xl', lg: 'xl' }} mb="16" mt="12">
-      <Box zIndex="-1" position="absolute" fontSize="280px" ml="-165" mt="-36" opacity="0.1">
+    <Heading
+      fontSize={{ base: 'l', md: 'xl', lg: 'xl' }}
+      mt={{ base: '0', md: '12' }}
+      mb={{ base: '4', md: '16' }}
+    >
+      <Box
+        zIndex="-1"
+        position="absolute"
+        fontSize={{ base: '200px', md: '280px' }}
+        ml={{ base: '-100', md: '-165' }}
+        mt={{ base: '-28', md: '-36' }}
+        opacity="0.1"
+      >
         <Text>{backtitle}</Text>
       </Box>
       <Text
