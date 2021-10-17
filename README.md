@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# Challenge - Learning Village Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a challenge to implement a learning platform, focused on front-end development, provided by Loomi.
 
-## Available Scripts
+The goal was to create the front end of a learning platform.
 
-In the project directory, you can run:
+    - [x]  Main requirements:
+    - [x]  Follow the design mockups with fidelity;
+    - [x]  Implement responsive layout for all pages developed;
+    - [x]  Use JavaScript, React.js and Typescript;
+    - [x]  Use an external library for styling (Chakra UI).
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### ✅  Login Page
 
-### `npm test`
+    - [x]  Create a login page;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - [x]  Create a password reset page;
 
-### `npm run build`
+    - [x]  Create a page for email verification;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - [x]  Create a page to create a new password;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    - [x]  Create an alert for successful password reset;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - [x]  Implement responsive layout for all login pages.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### ✅  Feed - News Page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - []  Create a feed page for news.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### ✅  Feed - Post Page
 
-## Learn More
+    - []  Create a feed page for posts.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies
+**Techs:**
+- [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+- [CSS](https://developer.mozilla.org/en-US/docs/Glossary/css)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React.js](https://reactjs.org/docs/getting-started.html)
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+- [Chackra UI](https://chakra-ui.com/docs/getting-started)
+- [FontAwesome](https://fontawesome.com/)
+- [Prettier](https://www.npmjs.com/package/prettier)
+- [Lint](https://www.npmjs.com/package/lint)
+- [Commitlint](https://www.npmjs.com/package/commitlint)
+- [Husky](https://www.npmjs.com/package/husky)
+
+
+## Contributing
+
+Contributions are always welcome! If you have any ideas, suggestions, fixes, feel free to contribute. You can do that by going through the following steps:
+
+1. Clone this repo
+2. Create a branch: `git checkout -b feat/your-module`
+3. Make some changes
+4. Test your changes
+5. Push your branch and open a Pull Request
+
+
+## Used by
+
+This project is a front-end development challenge, of a learning platform, provided by Loomi.
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
