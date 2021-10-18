@@ -4,10 +4,11 @@
   --main-background-color: #F9F9FE;
   --black-color: #231F20;
   --white-color: #FFFFFF;
+  --white-color-alt: #ffffff85;
+  --gray-color: #333;
 }
 
 * {
   font-family: 'Coolvetica Condensed RG', sans-serif;
   font-weight: 100;
-  letter-spacing: 0.4px;
 }

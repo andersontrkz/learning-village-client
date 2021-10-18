@@ -11,6 +11,7 @@ import {
 import { faMicrosoft, faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useHistory } from 'react-router';
 
 import Header from './Header';
 
@@ -19,6 +20,8 @@ type LoginFormProps = {
 };
 
 export default function LoginForm({ setAction }: LoginFormProps) {
+  const history = useHistory();
+
   return (
     <>
       <Header title="ENTRAR NA SUA CONTA" subtitle="LOGIN" backtitle="LOGIN" />
@@ -70,7 +73,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
           bg: 'var(--primary-color-alt)',
           transition: '.9s',
         }}
-        onClick={() => alert('Clicou!')}
+        onClick={() => history.push('feed')}
       >
         ENTRAR
       </Button>
