@@ -37,17 +37,18 @@ function Card({ data, index }: CardProps) {
 
   return (
     <Flex
-      w="80%"
+      direction={{ base: 'column', md: 'row' }}
+      w={{ base: '100%', md: '80%' }}
       h="1xs"
-      m={{ base: '8px auto 18px', lg: '12px auto 24px' }}
-      backgroundColor={generateCardColor()}
+      m={{ base: '8px auto 40px', md: '8px auto 18px', lg: '12px auto 24px' }}
+      alignItems={{ base: 'center', md: 'unset' }}
       color="var(--white-color)"
     >
-      <Text position="relative" display="flex" w="55%">
+      <Text position="relative" display="flex" w={{ base: '100%', md: '55%' }}>
         <Image src={data.media} alt={`Picture of ${data.type}`} objectFit="cover" w="100%" />
       </Text>
 
-      <Text w="45%">
+      <Box w="90%" backgroundColor={generateCardColor()} pb={{ base: '8', md: '4' }}>
         {data.type === 'post' ? (
           <Flex
             justifyContent="space-between"
@@ -88,7 +89,7 @@ function Card({ data, index }: CardProps) {
                 border="1px"
                 borderColor="#808285"
                 rightIcon={<InterestSvg />}
-                width={{ base: '2xs', sm: '2xs', md: '36', lg: '1xs' }}
+                width={{ base: '130px', sm: '150px', md: '36', lg: '1xs' }}
                 alignSelf="center"
                 pl="6"
                 _hover={{
@@ -112,7 +113,7 @@ function Card({ data, index }: CardProps) {
             {data.content}
           </Text>
         </Flex>
-      </Text>
+      </Box>
     </Flex>
   );
 }
