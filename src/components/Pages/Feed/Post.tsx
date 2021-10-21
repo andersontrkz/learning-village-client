@@ -20,7 +20,7 @@ export default function Post() {
   return (
     <Box>
       <Button
-        zIndex="toast"
+        zIndex="10"
         fontSize="28px"
         fontWeight="normal"
         bg={'#2D00F7'}
@@ -31,7 +31,8 @@ export default function Post() {
         pt="4"
         pb="4"
         position="fixed"
-        right="150"
+        right={{ base: '10', md: '150' }}
+        top={{ base: '90', md: 'auto' }}
         _hover={{
           bg: 'var(--primary-color-alt)',
           transition: '.9s',
