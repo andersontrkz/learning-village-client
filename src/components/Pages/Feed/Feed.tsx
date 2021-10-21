@@ -1,31 +1,10 @@
-import { Box, Drawer, DrawerContent, useDisclosure } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import CardList from './CardList';
+import { Layout } from './Layout';
 
-import { MobileNav } from './MobileNav';
-import Sidebar from './Sidebar';
-
-export const Feed = ({ children }: { children: ReactNode }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
+export const Feed = () => {
   return (
-    <Box minH="100vh" bg="var(--background-color)">
-      <Sidebar onClose={() => onClose} display={{ base: 'none', md: 'block' }} />
-      <Drawer
-        isOpen={isOpen}
-        placement="left"
-        onClose={onClose}
-        returnFocusOnClose={false}
-        onOverlayClick={onClose}
-        size="full"
-      >
-        <DrawerContent>
-          <Sidebar onClose={onClose} />
-        </DrawerContent>
-      </Drawer>
-      <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
-      </Box>
-    </Box>
+    <Layout>
+      <CardList />
+    </Layout>
   );
 };

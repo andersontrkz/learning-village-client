@@ -66,7 +66,14 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
             <NavItem key={link.name} icon={link.icon} name={link.name} />
           ))}
         </Box>
-        <AvatarBox />
+        <Box
+          s={{ base: '0', md: '6' }}
+          mx="6"
+          mb={{ base: '0', md: '4' }}
+          mt={{ base: '0', md: '4' }}
+        >
+          <AvatarBox borderColor="var(--primary-color)" />
+        </Box>
       </Flex>
       <Button
         bg={'var(--primary-color)'}
