@@ -1,6 +1,8 @@
 import { Flex, Text, Image, Box, Button } from '@chakra-ui/react';
-import { faChevronRight, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { ReactComponent as InterestSvg } from '../../../assets/icons/interest.svg';
 
 import { AvatarBox } from './AvatarBox';
 
@@ -37,7 +39,7 @@ function Card({ data, index }: CardProps) {
     <Flex
       w="80%"
       h="1xs"
-      m="8px auto 18px"
+      m={{ base: '8px auto 18px', lg: '12px auto 24px' }}
       backgroundColor={generateCardColor()}
       color="var(--white-color)"
     >
@@ -47,12 +49,16 @@ function Card({ data, index }: CardProps) {
 
       <Text w="45%">
         {data.type === 'post' ? (
-          <Flex justifyContent="space-between" mx="6" my="4">
+          <Flex
+            justifyContent="space-between"
+            mx={{ base: '6', lg: '12' }}
+            my={{ base: '4', lg: '8' }}
+          >
             <AvatarBox avatarSize="md" borderColor={generateAvatarColor()} />
             <FontAwesomeIcon style={{ margin: '4px' }} icon={faEllipsisV} />
           </Flex>
         ) : (
-          <Box mx="6" my="2">
+          <Box mx={{ base: '6', lg: '12' }} my={{ base: '4', lg: '8' }}>
             <Text fontSize="24px">{data.title}</Text>
             <Text fontSize="16px" fontFamily="Montserrat" mt="-1.5">
               {data.partner}
@@ -64,7 +70,7 @@ function Card({ data, index }: CardProps) {
               justifyContent="space-between"
               px="6"
               py="2"
-              mt="2"
+              mt={{ base: '2', lg: '6' }}
             >
               <Box color="var(--black-color)">
                 <Text fontFamily="Montserrat">{data.date}</Text>
@@ -81,9 +87,10 @@ function Card({ data, index }: CardProps) {
                 rounded="none"
                 border="1px"
                 borderColor="#808285"
-                rightIcon={<FontAwesomeIcon icon={faChevronRight} />}
+                rightIcon={<InterestSvg />}
                 width={{ base: '2xs', sm: '2xs', md: '36', lg: '1xs' }}
                 alignSelf="center"
+                pl="6"
                 _hover={{
                   bg: 'rgba(0, 0, 0, 0.1)',
                   transition: '.9s',
@@ -95,7 +102,12 @@ function Card({ data, index }: CardProps) {
             </Flex>
           </Box>
         )}
-        <Flex mx="6" justifyContent="space-between" alignContent="center">
+        <Flex
+          mx={{ base: '6', lg: '12' }}
+          my={{ base: '0', lg: '6' }}
+          justifyContent="space-between"
+          alignContent="center"
+        >
           <Text fontSize="16px" fontFamily="Montserrat">
             {data.content}
           </Text>
