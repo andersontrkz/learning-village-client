@@ -2,7 +2,7 @@ import { Flex, Text, Image, Box, Button } from '@chakra-ui/react';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { ReactComponent as InterestSvg } from '../../../assets/icons/interest.svg';
+import { ReactComponent as InterestSvg } from '../../../assets/icons/interest_icon.svg';
 
 import { AvatarBox } from './AvatarBox';
 
@@ -39,27 +39,23 @@ function Card({ data, index }: CardProps) {
     <Flex
       direction={{ base: 'column', md: 'row' }}
       w={{ base: '100%', md: '80%' }}
-      h="1xs"
+      h={{ base: 'auto', md: '288px' }}
       m={{ base: '8px auto 40px', md: '8px auto 18px', lg: '12px auto 24px' }}
       alignItems={{ base: 'center', md: 'unset' }}
       color="var(--white-color)"
     >
-      <Text position="relative" display="flex" w={{ base: '100%', md: '55%' }}>
+      <Text position="relative" display="flex" w={{ base: '100%', md: '65%' }}>
         <Image src={data.media} alt={`Picture of ${data.type}`} objectFit="cover" w="100%" />
       </Text>
 
-      <Box w="90%" backgroundColor={generateCardColor()} pb={{ base: '8', md: '4' }}>
+      <Box w={{ base: '90%', md: '55%' }} bg={generateCardColor()} pb={{ base: '8', md: '4' }}>
         {data.type === 'post' ? (
-          <Flex
-            justifyContent="space-between"
-            mx={{ base: '6', lg: '12' }}
-            my={{ base: '4', lg: '8' }}
-          >
+          <Flex justifyContent="space-between" mx="12" my="4">
             <AvatarBox avatarSize="md" borderColor={generateAvatarColor()} />
             <FontAwesomeIcon style={{ margin: '4px' }} icon={faEllipsisV} />
           </Flex>
         ) : (
-          <Box mx={{ base: '6', lg: '12' }} my={{ base: '4', lg: '8' }}>
+          <Box mx={{ base: '6', lg: '12' }} my="2">
             <Text fontSize="24px">{data.title}</Text>
             <Text fontSize="16px" fontFamily="Montserrat" mt="-1.5">
               {data.partner}
@@ -71,7 +67,7 @@ function Card({ data, index }: CardProps) {
               justifyContent="space-between"
               px="6"
               py="2"
-              mt={{ base: '2', lg: '6' }}
+              mt={{ base: '2', md: '3' }}
             >
               <Box color="var(--black-color)">
                 <Text fontFamily="Montserrat">{data.date}</Text>
@@ -96,19 +92,14 @@ function Card({ data, index }: CardProps) {
                   bg: 'rgba(0, 0, 0, 0.1)',
                   transition: '.9s',
                 }}
-                onClick={() => console.log('Clicou!')}
+                onClick={() => alert('Clicou!')}
               >
                 Tem interesse?
               </Button>
             </Flex>
           </Box>
         )}
-        <Flex
-          mx={{ base: '6', lg: '12' }}
-          my={{ base: '0', lg: '6' }}
-          justifyContent="space-between"
-          alignContent="center"
-        >
+        <Flex mx={{ base: '6', lg: '12' }} justifyContent="space-between" alignContent="center">
           <Text fontSize="16px" fontFamily="Montserrat">
             {data.content}
           </Text>

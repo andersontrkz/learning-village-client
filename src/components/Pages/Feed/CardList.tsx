@@ -1,3 +1,5 @@
+import { Box } from '@chakra-ui/layout';
+
 import Card from './Card';
 
 export default function CardList() {
@@ -41,10 +43,10 @@ export default function CardList() {
   ];
 
   return (
-    <>
+    <Box mt="16">
       {data.map((e, index) => {
         return <Card key={index} data={e} index={index} />;
       })}
-    </>
+    </Box>
   );
 }

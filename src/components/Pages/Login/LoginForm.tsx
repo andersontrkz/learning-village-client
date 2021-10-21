@@ -94,7 +94,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
           borderRadius="50%"
           marginRight="2"
           _hover={{
-            bg: 'var(--primary-color-alt)',
+            bg: 'var(--primary-color)',
             color: 'var(--white-color)',
             transition: '.9s',
           }}
@@ -108,7 +108,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
           borderRadius="50%"
           marginLeft="2"
           _hover={{
-            bg: 'var(--primary-color-alt)',
+            bg: 'var(--primary-color)',
             color: 'var(--white-color)',
             transition: '.9s',
           }}
