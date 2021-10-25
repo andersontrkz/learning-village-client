@@ -18,21 +18,32 @@ interface SidebarProps extends BoxProps {
 }
 
 interface LinkItemProps {
+  route: string;
   name: string;
   icon: any;
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'SUA EMPRESA', icon: faHome },
-  { name: 'COMUNIDADE', icon: faUsers },
-  { name: 'FEED', icon: faCompass },
-  { name: 'ESPAÇOS', icon: faMapMarkerAlt },
-  { name: 'EVENTOS', icon: faCalendarAlt },
-  { name: 'ESPAÇO AJUDA', icon: faCommentAlt },
+  { name: 'SUA EMPRESA', icon: faHome, route: 'sua-empresa' },
+  { name: 'COMUNIDADE', icon: faUsers, route: 'comunidadee' },
+  { name: 'FEED', icon: faCompass, route: 'feed' },
+  { name: 'ESPAÇOS', icon: faMapMarkerAlt, route: 'espacos' },
+  { name: 'EVENTOS', icon: faCalendarAlt, route: 'eventos' },
+  { name: 'ESPAÇO AJUDA', icon: faCommentAlt, route: 'espaco-ajuda' },
 ];
 
 export default function Sidebar({ onClose, ...rest }: SidebarProps) {
   const history = useHistory();
+
+  const checkCurrentUrl = (route: string) => {
+    const url = history.location.pathname.split('/')[1];
+
+    if (url === route) {
+      return 'var(--white-color)';
+    }
+
+    return 'none';
+  };
 
   return (
     <Box
@@ -62,8 +73,8 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
       </Flex>
       <Flex flexDirection={{ base: 'column-reverse', md: 'column' }}>
         <Box>
-          {LinkItems.map((link) => (
-            <NavItem key={link.name} icon={link.icon} name={link.name} />
+          {LinkItems.map(({ name, icon, route }) => (
+            <NavItem key={name} icon={icon} name={name} color={checkCurrentUrl(route)} />
           ))}
         </Box>
         <Box s={{ base: 0, md: 6 }} mx="6" mb={{ base: 0, md: 4 }} mt={{ base: 0, md: 4 }}>
