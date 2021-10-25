@@ -34,13 +34,13 @@ export const Login = () => {
         >
           <>
             <Flex
-              p={{ base: '14', md: '24' }}
+              p={{ base: 14, md: 24 }}
               flex={1}
               align={'center'}
               justify={'center'}
               backgroundColor="--main-background-color"
             >
-              <Stack w={'full'} minW={{ base: '64', md: '64', lg: '96' }}>
+              <Stack w={'full'} minW={{ base: 64, md: 64, lg: 96 }}>
                 {selectActionForm()}
               </Stack>
             </Flex>

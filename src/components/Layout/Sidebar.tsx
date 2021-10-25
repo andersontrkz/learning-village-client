@@ -10,8 +10,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from 'react-router-dom';
 
-import { AvatarBox } from './AvatarBox';
-import NavItem from './NavItem';
+import { AvatarBox } from '../Pages/Feed/AvatarBox';
+import NavItem from '../Pages/Feed/NavItem';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
@@ -52,11 +52,11 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
           fontFamily="monospace"
           fontWeight="bold"
           color="var(--white-color)"
-          display={{ base: 'none', md: 'flex' }}
+          d={{ base: 'none', md: 'flex' }}
         >
           Learning Village
         </Text>
-        <Box display={{ base: 'flex', md: 'none' }} onClick={onClose}>
+        <Box d={{ base: 'flex', md: 'none' }} onClick={onClose}>
           <FontAwesomeIcon icon={faTimes} size="lg" />
         </Box>
       </Flex>
@@ -77,10 +77,9 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
         rightIcon={<FontAwesomeIcon icon={faChevronRight} />}
         width="50%"
         alignSelf="center"
-        mt={{ base: '48px', md: '0' }}
+        mt={{ base: '48px', md: 0 }}
         mx="6"
-        pt="4"
-        pb="4"
+        py="4"
         iconSpacing="auto"
         _hover={{
           bg: 'var(--primary-color-alt)',

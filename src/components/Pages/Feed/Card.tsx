@@ -48,14 +48,14 @@ function Card({ data, index }: CardProps) {
         <Image src={data.media} alt={`Picture of ${data.type}`} objectFit="cover" w="100%" />
       </Text>
 
-      <Box w={{ base: '90%', md: '55%' }} bg={generateCardColor()} pb={{ base: '8', md: '4' }}>
+      <Box w={{ base: '90%', md: '55%' }} bg={generateCardColor()} pb={{ base: 8, md: 4 }}>
         {data.type === 'post' ? (
           <Flex justifyContent="space-between" mx="12" my="4">
             <AvatarBox avatarSize="md" borderColor={generateAvatarColor()} />
             <FontAwesomeIcon style={{ margin: '4px' }} icon={faEllipsisV} />
           </Flex>
         ) : (
-          <Box mx={{ base: '6', lg: '12' }} my="2">
+          <Box mx={{ base: 6, lg: 12 }} my="2">
             <Text fontSize="24px">{data.title}</Text>
             <Text fontSize="16px" fontFamily="Montserrat" mt="-1.5">
               {data.partner}
@@ -67,7 +67,7 @@ function Card({ data, index }: CardProps) {
               justifyContent="space-between"
               px="6"
               py="2"
-              mt={{ base: '2', md: '3' }}
+              mt={{ base: 2, md: 3 }}
             >
               <Box color="var(--black-color)">
                 <Text fontFamily="Montserrat">{data.date}</Text>
@@ -99,7 +99,7 @@ function Card({ data, index }: CardProps) {
             </Flex>
           </Box>
         )}
-        <Flex mx={{ base: '6', lg: '12' }} justifyContent="space-between" alignContent="center">
+        <Flex mx={{ base: 6, lg: 12 }} justifyContent="space-between" alignContent="center">
           <Text fontSize="16px" fontFamily="Montserrat">
             {data.content}
           </Text>

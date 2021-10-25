@@ -28,18 +28,17 @@ export const Post = () => {
         zIndex="10"
         fontSize="28px"
         fontWeight="normal"
-        bg={'#2D00F7'}
+        bg={'var(--secondary-color)'}
         textColor={'var(--white-color)'}
         rounded="none"
         leftIcon={<FontAwesomeIcon icon={faPlus} size="xs" />}
-        width={{ base: 'min' }}
-        pt="4"
-        pb="4"
+        w={{ base: 'min' }}
+        py="4"
         position="fixed"
-        right={{ base: '10', md: '150' }}
-        top={{ base: '90', md: 'auto' }}
+        right={{ base: 10, md: 140 }}
+        top={{ base: 90, md: 'auto' }}
         _hover={{
-          bg: 'var(--primary-color-alt)',
+          bg: 'var(--secondary-color-alt)',
           transition: '.9s',
         }}
         onClick={onOpen}
@@ -50,7 +49,7 @@ export const Post = () => {
       <Modal onClose={onClose} size={size} isOpen={isOpen}>
         <ModalContent p="0" boxShadow="dark-lg" rounded="none">
           <ModalHeader
-            display="flex"
+            d="flex"
             justifyContent="space-between"
             alignItems="center"
             boxShadow="md"
@@ -60,14 +59,14 @@ export const Post = () => {
               bg="var(--gray-color)"
               borderRight="4px"
               borderRightColor="var(--primary-color)"
-              onClick={onClose}
-              width="20%"
+              w="20%"
               wrap="nowrap"
               alignItems="center"
               rounded="none"
               _hover={{
                 bg: 'var(--gray-color)',
               }}
+              onClick={onClose}
             >
               <FontAwesomeIcon icon={faChevronLeft} color="var(--primary-color)" />
               <Text color="var(--white-color)" ml="4" mr="4">
@@ -79,7 +78,7 @@ export const Post = () => {
               Postar
             </Link>
           </ModalHeader>
-          <ModalBody display="flex" fontFamily="Montserrat" mt="4">
+          <ModalBody d="flex" fontFamily="Montserrat" mt="4">
             <Avatar
               showBorder={true}
               size="md"
@@ -92,7 +91,7 @@ export const Post = () => {
               resize="none"
               border="none"
               placeholder="Escreva seu post aqui..."
-              height="32"
+              h="40"
             />
           </ModalBody>
           <ModalFooter>

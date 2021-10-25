@@ -1,7 +1,7 @@
+import { Layout } from '../../Layout/Layout';
 import { Post } from '../../Modals/Post';
 
 import CardList from './CardList';
-import { Layout } from './Layout';
 
 export const Feed = () => {
   return (
