@@ -29,23 +29,17 @@ export const PreviewCardList = ({ active, reject }: PreviewCardListProps) => {
 
   if (!files.length)
     return (
-      <Flex
-        w="full"
-        h="full"
-        justifyContent="center"
-        alignItems="center"
-        color="var(--primary-color)"
-      >
+      <Flex w="full" h="full" justify="center" alignItems="center" color="var(--primary-color)">
         {renderDragMessage()}
       </Flex>
     );
 
   return (
-    <Flex justifyContent="center">
+    <Flex justify="center">
       {files.map((uploadedFile: IFile) => (
         <Box key={uploadedFile.id}>
           <Preview file={uploadedFile} />
-          <Flex justifyContent="flex-end" h="112px" w="112px" m="4px">
+          <Flex justify="flex-end" h="112px" w="112px" m="4px">
             <PreviewCard uploadedFile={uploadedFile} />
           </Flex>
         </Box>

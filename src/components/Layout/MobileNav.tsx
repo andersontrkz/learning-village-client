@@ -10,7 +10,7 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   return (
     <Flex pl="0" pr="4px" h="20" alignItems="center" boxShadow="base" {...rest}>
       <Center
-        bg="var(--gray-color)"
+        bg="var(--dark-gray-color)"
         borderRight="4px"
         borderRightColor="var(--primary-color)"
         d={{ base: 'flex', md: 'none' }}
@@ -19,7 +19,7 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         <IconButton
           aria-label="open menu"
           pl="8"
-          bg="var(--gray-color)"
+          bg="var(--dark-gray-color)"
           icon={<FontAwesomeIcon icon={faBars} color="var(--primary-color)" />}
         />
         <Text color="var(--white-color)" ml="4" mr="4">

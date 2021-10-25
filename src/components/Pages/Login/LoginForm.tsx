@@ -47,13 +47,13 @@ export default function LoginForm({ setAction }: LoginFormProps) {
       </FormControl>
       <Link
         alignSelf="center"
-        textColor="var(--primary-color)"
+        color="var(--primary-color)"
         textDecoration="underline"
         fontWeight="bold"
         fontFamily="Montserrat"
         fontSize="12px"
         _hover={{
-          textColor: 'var(--primary-color-alt)',
+          color: 'var(--primary-color-alt)',
         }}
         onClick={() => setAction('recovery')}
       >
@@ -62,13 +62,12 @@ export default function LoginForm({ setAction }: LoginFormProps) {
       <br />
       <Button
         bg={'var(--primary-color)'}
-        textColor={'var(--white-color)'}
+        color={'var(--white-color)'}
         rounded="none"
         rightIcon={<FontAwesomeIcon icon={faChevronRight} />}
-        width={{ base: '2xs', sm: '2xs', md: '3xs', lg: '3xs' }}
+        w={{ base: '2xs', sm: '2xs', md: '3xs', lg: '3xs' }}
         alignSelf="center"
-        pt="4"
-        pb="4"
+        py="4"
         _hover={{
           bg: 'var(--primary-color-alt)',
           transition: '.9s',
@@ -77,15 +76,10 @@ export default function LoginForm({ setAction }: LoginFormProps) {
       >
         ENTRAR
       </Button>
-      <Text
-        alignSelf="center"
-        fontFamily="Montserrat"
-        fontSize="16px"
-        style={{ marginTop: '48px' }}
-      >
+      <Text alignSelf="center" fontFamily="Montserrat" fontSize="16px" mt="48px">
         Ou fazer login com
       </Text>
-      <Flex alignContent="center" justifyContent="center" style={{ marginTop: '24px' }}>
+      <Flex justify="center">
         <IconButton
           aria-label="Search database"
           icon={<FontAwesomeIcon icon={faMicrosoft} />}

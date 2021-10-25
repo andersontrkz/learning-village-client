@@ -7,7 +7,8 @@
   --black-color: #231F20;
   --white-color: #FFFFFF;
   --white-color-alt: #ffffff85;
-  --gray-color: #333;
+  --light-gray-color: #F0F0F4;
+  --dark-gray-color: #333;
 }
 
 * {

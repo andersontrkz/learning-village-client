@@ -25,7 +25,7 @@ interface CardProps {
 function Card({ data, index }: CardProps) {
   const generateCardColor = () => {
     if (index % 2 === 0) {
-      return 'var(--gray-color)';
+      return 'var(--dark-gray-color)';
     } else {
       return 'var(--primary-color)';
     }
@@ -44,13 +44,13 @@ function Card({ data, index }: CardProps) {
       alignItems={{ base: 'center', md: 'unset' }}
       color="var(--white-color)"
     >
-      <Text position="relative" display="flex" w={{ base: '100%', md: '65%' }}>
+      <Text position="relative" d="flex" w={{ base: '100%', md: '65%' }}>
         <Image src={data.media} alt={`Picture of ${data.type}`} objectFit="cover" w="100%" />
       </Text>
 
       <Box w={{ base: '90%', md: '55%' }} bg={generateCardColor()} pb={{ base: 8, md: 4 }}>
         {data.type === 'post' ? (
-          <Flex justifyContent="space-between" mx="12" my="4">
+          <Flex justify="space-between" mx="12" my="4">
             <AvatarBox avatarSize="md" borderColor={generateAvatarColor()} />
             <FontAwesomeIcon style={{ margin: '4px' }} icon={faEllipsisV} />
           </Flex>
@@ -64,7 +64,7 @@ function Card({ data, index }: CardProps) {
               wrap="wrap"
               bg="var(--white-color)"
               w="100%"
-              justifyContent="space-between"
+              justify="space-between"
               px="6"
               py="2"
               mt={{ base: 2, md: 3 }}
@@ -85,7 +85,7 @@ function Card({ data, index }: CardProps) {
                 border="1px"
                 borderColor="#808285"
                 rightIcon={<InterestSvg />}
-                width={{ base: '130px', sm: '150px', md: '36', lg: '1xs' }}
+                w={{ base: '130px', sm: '150px', md: '36', lg: '1xs' }}
                 alignSelf="center"
                 pl="6"
                 _hover={{
@@ -99,7 +99,7 @@ function Card({ data, index }: CardProps) {
             </Flex>
           </Box>
         )}
-        <Flex mx={{ base: 6, lg: 12 }} justifyContent="space-between" alignContent="center">
+        <Flex mx={{ base: 6, lg: 12 }} justify="space-between" alignContent="center">
           <Text fontSize="16px" fontFamily="Montserrat">
             {data.content}
           </Text>

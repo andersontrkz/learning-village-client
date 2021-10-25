@@ -4,15 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Alert() {
   return (
-    <Flex direction="column" width="100vw" alignItems="center" mt="8">
-      <Flex width={{ base: '70%', md: '50%' }} wrap="wrap" alignItems="center" boxShadow="base">
-        <Flex
-          backgroundColor="#F0F0F4"
-          justifyContent="center"
-          alignItems="center"
-          padding="16px"
-          mr="4"
-        >
+    <Flex direction="column" w="100vw" alignItems="center" mt="8">
+      <Flex w={{ base: '70%', md: '50%' }} wrap="wrap" alignItems="center" boxShadow="base">
+        <Flex bg="var(--light-gray-color)" justify="center" alignItems="center" p="16px" mr="4">
           <FontAwesomeIcon icon={faCheck} />
         </Flex>
         <Text pr="8">SENHA REDEFINIDA COM SUCESSO</Text>

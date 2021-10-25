@@ -56,15 +56,14 @@ export const Post = () => {
             pl="0"
           >
             <Button
-              bg="var(--gray-color)"
+              bg="var(--dark-gray-color)"
               borderRight="4px"
               borderRightColor="var(--primary-color)"
-              w="20%"
               wrap="nowrap"
               alignItems="center"
               rounded="none"
               _hover={{
-                bg: 'var(--gray-color)',
+                bg: 'var(--dark-gray-color)',
               }}
               onClick={onClose}
             >

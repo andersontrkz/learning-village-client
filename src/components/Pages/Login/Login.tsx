@@ -30,15 +30,13 @@ export const Login = () => {
           minH={'100vh'}
           maxH={{ md: '100vh' }}
           direction={{ base: 'column-reverse', md: 'row' }}
-          backgroundColor="--main-background-color"
         >
           <>
             <Flex
               p={{ base: 14, md: 24 }}
-              flex={1}
               align={'center'}
               justify={'center'}
-              backgroundColor="--main-background-color"
+              bg="--main-background-color"
             >
               <Stack w={'full'} minW={{ base: 64, md: 64, lg: 96 }}>
                 {selectActionForm()}

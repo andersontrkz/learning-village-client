@@ -15,7 +15,7 @@ export default function ConfirmForm({ setAction }: ConfirmFormFormProps) {
       <Text textAlign="center" fontSize="13px" fontFamily="Montserrat">
         Enviamos um e-mail com o código de confirmação para a seuemail@learningvillage.com
       </Text>
-      <FormControl id="email" style={{ marginBottom: '32px', marginTop: '20px' }}>
+      <FormControl id="email" mt="20px" mb="32px">
         <FormLabel fontSize="24px">Código de confirmação</FormLabel>
         <Input
           type="text"
@@ -24,16 +24,15 @@ export default function ConfirmForm({ setAction }: ConfirmFormFormProps) {
           borderColor="var(--black-color)"
         />
       </FormControl>
-      <Center style={{ marginBottom: '64px' }}>
+      <Center mb="64px">
         <Button
           bg={'var(--primary-color)'}
           textColor={'var(--white-color)'}
           rounded="none"
           rightIcon={<FontAwesomeIcon icon={faChevronRight} />}
-          width={{ base: '2xs', sm: '2xs', md: '3xs', lg: '3xs' }}
+          w={{ base: '2xs', sm: '2xs', md: '3xs', lg: '3xs' }}
           alignSelf="center"
-          pt="6"
-          pb="6"
+          py="6"
           _hover={{
             bg: 'var(--primary-color-alt)',
             transition: '.9s',
@@ -50,7 +49,7 @@ export default function ConfirmForm({ setAction }: ConfirmFormFormProps) {
       </Center>
       <Center>
         <Link
-          textColor="var(--primary-color)"
+          color="var(--primary-color)"
           textDecoration="underline"
           fontWeight="bold"
           fontFamily="Montserrat"

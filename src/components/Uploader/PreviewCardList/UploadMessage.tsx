@@ -16,7 +16,7 @@ function UploadMessage({ type, children }: UploadMessageProps) {
   return (
     <Flex
       height="full"
-      justifyContent="center"
+      justify="center"
       alignItems="center"
       color={`${messageColors[type || 'default']}`}
       transition="0.9s"

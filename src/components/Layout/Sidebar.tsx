@@ -46,7 +46,7 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
       h="full"
       {...rest}
     >
-      <Flex h="20" alignItems="center" mx="10" justifyContent="space-between">
+      <Flex h="20" alignItems="center" mx="10" justify="space-between">
         <Text
           fontSize="2xl"
           fontFamily="monospace"

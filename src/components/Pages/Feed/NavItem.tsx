@@ -8,7 +8,7 @@ interface NavItemProps extends FlexProps {
 
 export default function NavItem({ icon, name, ...rest }: NavItemProps) {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }}>
+    <Link href="#" textDecor="none">
       <Flex
         align="center"
         p="4"
