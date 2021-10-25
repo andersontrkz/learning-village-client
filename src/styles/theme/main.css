@@ -12,3 +12,25 @@
   font-family: 'Coolvetica Condensed RG', sans-serif;
   font-weight: 100;
 }
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  border: 2px solid var(--primary-color);
+  padding: 24px 8px 32px 8px;
+  cursor: pointer;
+  margin: auto 24px
+}
+
+.dropzone ul li {
+  margin-bottom: 16px;
+}
+
+.dropzone ul {
+  margin-bottom: 0;
+}
+
+.dropzone p {
+  align-self: center;
+}

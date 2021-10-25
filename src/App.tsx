@@ -1,4 +1,4 @@
-import Provider from './context/Provider';
+import Provider from './context/Global/Provider';
 import { Routes } from './routes';
 
 import './styles/index.css';
