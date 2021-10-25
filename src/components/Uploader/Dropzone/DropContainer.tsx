@@ -2,7 +2,9 @@ import { Box, Button, Flex } from '@chakra-ui/react';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-type IDropContainer = {
+import { useFiles } from '../../../context/Uploader';
+
+type DropContainerProps = {
   active?: boolean;
   reject?: boolean;
   open: any;
@@ -10,14 +12,16 @@ type IDropContainer = {
   root: any;
 };
 
-function DropContainer({ active, reject, children, root, open }: IDropContainer) {
+export const DropContainer = ({ active, reject, children, root, open }: DropContainerProps) => {
+  const { uploadedFiles: files } = useFiles();
+
   const setBorderColor = () => {
-    if (active) {
-      return '#78e5d5';
+    if (reject) {
+      return 'red';
     }
 
-    if (reject) {
-      return '#e57878';
+    if (active) {
+      return '#78e5d5';
     }
 
     return 'var(--primary-color)';
@@ -26,10 +30,9 @@ function DropContainer({ active, reject, children, root, open }: IDropContainer)
   return (
     <Flex direction="column">
       <Box
-        border="2px"
+        border={`2px solid ${setBorderColor()}`}
         height="124px"
-        borderColor={setBorderColor()}
-        transition="height 0.2s ease"
+        transition="0.9s"
         {...root()}
         onClick={(e) => e.preventDefault()}
       >
@@ -41,9 +44,8 @@ function DropContainer({ active, reject, children, root, open }: IDropContainer)
         bg="var(--primary-color)"
         textColor={'var(--white-color)'}
         rounded="none"
-        pt="4"
-        pb="4"
-        margin="-20px auto auto"
+        py="4"
+        margin={!files.length ? '-20px auto auto' : '20px auto auto'}
         leftIcon={<FontAwesomeIcon icon={faCamera} size="xs" />}
         _hover={{
           bg: 'var(--primary-color-alt)',
@@ -55,6 +57,6 @@ function DropContainer({ active, reject, children, root, open }: IDropContainer)
       </Button>
     </Flex>
   );
-}
+};
 
 export default DropContainer;

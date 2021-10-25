@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/layout';
 import React from 'react';
 
-interface ITypeMessageColor {
+interface UploadMessageProps {
   type?: 'default' | 'error' | 'success';
   children: string;
 }
@@ -12,13 +12,14 @@ const messageColors = {
   success: '#78e5d5',
 };
 
-function UploadMessage({ type, children }: ITypeMessageColor) {
+function UploadMessage({ type, children }: UploadMessageProps) {
   return (
     <Flex
       height="full"
       justifyContent="center"
       alignItems="center"
       color={`${messageColors[type || 'default']}`}
+      transition="0.9s"
     >
       {children}
     </Flex>

@@ -6,7 +6,7 @@ interface PreviewProps {
   file?: IFile;
 }
 
-function Preview({ file }: PreviewProps) {
+const Preview = ({ file }: PreviewProps) => {
   const generatePreviewType = () => {
     const type = file?.file?.type.split('/')[0];
     const src = file?.preview;
@@ -29,6 +29,6 @@ function Preview({ file }: PreviewProps) {
       {generatePreviewType()}
     </Flex>
   );
-}
+};
 
 export default Preview;

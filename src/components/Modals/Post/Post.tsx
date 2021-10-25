@@ -11,14 +11,16 @@ import {
   ModalHeader,
   Avatar,
   Textarea,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { faChevronLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Uploader from './Uploader';
+import Uploader from '../../Uploader/Uploader';
 
-export default function Post() {
+export const Post = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const size = useBreakpointValue({ base: 'full', lg: 'xl' });
 
   return (
     <Box>
@@ -45,7 +47,7 @@ export default function Post() {
         NOVO POST
       </Button>
 
-      <Modal onClose={onClose} size="xl" isOpen={isOpen}>
+      <Modal onClose={onClose} size={size} isOpen={isOpen}>
         <ModalContent p="0" boxShadow="dark-lg" rounded="none">
           <ModalHeader
             display="flex"
@@ -100,4 +102,4 @@ export default function Post() {
       </Modal>
     </Box>
   );
-}
+};
