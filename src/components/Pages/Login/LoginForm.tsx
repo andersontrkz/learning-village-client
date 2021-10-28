@@ -11,7 +11,9 @@ import {
 import { faMicrosoft, faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useHistory } from 'react-router';
+import { useContext, useState } from 'react';
+
+import Context from '../../../context/Global/Context';
 
 import Header from './Header';
 
@@ -20,7 +22,16 @@ type LoginFormProps = {
 };
 
 export default function LoginForm({ setAction }: LoginFormProps) {
-  const history = useHistory();
+  const { loginApp } = useContext(Context);
+
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  });
+
+  const changeUser = ({ id, value }: any) => {
+    setUser({ ...user, [id]: value });
+  };
 
   return (
     <>
@@ -29,20 +40,24 @@ export default function LoginForm({ setAction }: LoginFormProps) {
         <FormLabel fontSize="24px">E-mail</FormLabel>
         <Input
           mb="6"
+          id="email"
           type="email"
           rounded="none"
           placeholder="email@learningvillage.com"
           borderColor="var(--black-color)"
+          onChange={({ target }) => changeUser(target)}
         />
       </FormControl>
       <FormControl id="password">
         <FormLabel fontSize="24px">Senha</FormLabel>
         <Input
           mb="4"
+          id="password"
           type="password"
           rounded="none"
           placeholder="********"
           borderColor="var(--black-color)"
+          onChange={({ target }) => changeUser(target)}
         />
       </FormControl>
       <Link
@@ -72,7 +87,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
           bg: 'var(--primary-color-alt)',
           transition: '.9s',
         }}
-        onClick={() => history.push('feed')}
+        onClick={() => loginApp(user)}
       >
         ENTRAR
       </Button>

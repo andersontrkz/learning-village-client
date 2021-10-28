@@ -1,4 +1,4 @@
-import { Box, Flex, useColorModeValue, Text, BoxProps, Button } from '@chakra-ui/react';
+import { Box, Flex, useColorModeValue, BoxProps, Button, Image } from '@chakra-ui/react';
 import { faCompass, faCommentAlt, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import {
   faHome,
@@ -10,8 +10,9 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from 'react-router-dom';
 
+import logo from '../../assets/logos/logo.png';
+import NavItem from '../Layout/NavItem';
 import { AvatarBox } from '../Pages/Feed/AvatarBox';
-import NavItem from '../Pages/Feed/NavItem';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
@@ -58,15 +59,7 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="10" justify="space-between">
-        <Text
-          fontSize="2xl"
-          fontFamily="monospace"
-          fontWeight="bold"
-          color="var(--white-color)"
-          d={{ base: 'none', md: 'flex' }}
-        >
-          Learning Village
-        </Text>
+        <Image h="10" ml="10" src={logo} d={{ base: 'none', md: 'flex' }} />
         <Box d={{ base: 'flex', md: 'none' }} onClick={onClose}>
           <FontAwesomeIcon icon={faTimes} size="lg" />
         </Box>

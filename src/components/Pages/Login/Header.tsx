@@ -1,4 +1,6 @@
-import { Text, useBreakpointValue, Heading, Box } from '@chakra-ui/react';
+import { Text, useBreakpointValue, Heading, Box, Image } from '@chakra-ui/react';
+
+import raigeki from '../../../assets/vectors/raigeki.png';
 
 type HeaderProps = {
   title: string;
@@ -13,12 +15,28 @@ export default function Header({ title, subtitle, backtitle }: HeaderProps) {
       mt={{ base: 0, md: 12 }}
       mb={{ base: 4, md: 16 }}
     >
+      <Box d={{ base: 'none', md: 'unset' }}>
+        <Image
+          top={{ base: 52, md: 2 }}
+          left="0"
+          ml={{ base: '-24px', md: -20, lg: -18 }}
+          // d={{ base: '', md: -24 }}
+          h="24px"
+          position="absolute"
+          transform="auto"
+          translateX="4"
+          rotate="180"
+          filter="auto"
+          brightness="0"
+          src={raigeki}
+        />
+      </Box>
       <Box
         zIndex="-1"
         position="absolute"
-        fontSize={{ base: '200px', md: '280px' }}
+        fontSize={{ base: '200px', md: '270px' }}
         ml={{ base: -100, md: -165 }}
-        mt={{ base: -28, md: -36 }}
+        mt={{ base: -28, md: -28 }}
         opacity="0.1"
       >
         <Text>{backtitle}</Text>

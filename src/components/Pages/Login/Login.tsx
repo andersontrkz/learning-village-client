@@ -1,5 +1,9 @@
-import { Flex, VStack, Stack, Text } from '@chakra-ui/react';
+import { Flex, VStack, Stack, Image } from '@chakra-ui/react';
 import { useState } from 'react';
+
+import backgroundImage from '../../../assets/images/login-background.png';
+import logo from '../../../assets/logos/logo.png';
+import raigeki from '../../../assets/vectors/raigeki.png';
 
 import Alert from './Alert';
 import ConfirmForm from './ConfirmForm';
@@ -46,26 +50,24 @@ export const Login = () => {
             <Flex
               w={'full'}
               h={{ base: '30vh', md: '100vh' }}
-              backgroundImage={'https://blogs.esa.int/space19plus/files/2019/03/nebula.jpg'}
+              backgroundImage={backgroundImage}
               backgroundSize={'cover'}
               backgroundPosition={'center center'}
               alt={'Login Image'}
             >
               <VStack
-                w={'full'}
-                justify={'center'}
+                w="full"
+                justify="space-between"
                 px={{ base: 4, md: 8 }}
-                bgGradient={'linear(to-r, blackAlpha.600, transparent)'}
+                pb="30px"
+                bgGradient="linear(to-r, blackAlpha.600, transparent)"
               >
-                <Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
-                  <Text
-                    color={'white'}
-                    fontWeight={700}
-                    lineHeight={1.2}
-                    fontSize={{ base: '3xl', md: '4xl' }}
-                  >
-                    Learning Village Logo
-                  </Text>
+                <Stack maxW={'2xl'} />
+                <Stack maxW={'2xl'}>
+                  <Image h={{ base: 16, md: 28 }} src={logo} />
+                </Stack>
+                <Stack>
+                  <Image w={{ base: 'full', md: 'auto' }} src={raigeki} />
                 </Stack>
               </VStack>
             </Flex>

@@ -1,7 +1,13 @@
 import { createContext } from 'react';
 
-type GlobalContext = null;
+type GlobalContext = {
+  userData: any;
+  loginApp: (user: any) => void;
+};
 
-const Context = createContext<GlobalContext>(null);
+const Context = createContext<GlobalContext>({
+  userData: {},
+  loginApp: () => {},
+});
 
 export default Context;
