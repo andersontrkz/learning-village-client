@@ -22,6 +22,8 @@ export default function ConfirmForm({ setAction }: ConfirmFormFormProps) {
           rounded="none"
           placeholder="_ _ _ _ _ _"
           borderColor="var(--black-color)"
+          maxLength={6}
+          letterSpacing="widest"
         />
       </FormControl>
       <Center mb="64px">

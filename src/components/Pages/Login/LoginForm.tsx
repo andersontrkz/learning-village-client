@@ -25,6 +25,7 @@ type LoginFormProps = {
 export default function LoginForm({ setAction }: LoginFormProps) {
   const { loginApp } = useContext(Context);
   const [incorrectLogin, setIncorrectLogin] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
 
   const [user, setUser] = useState({
     email: '',
@@ -35,17 +36,36 @@ export default function LoginForm({ setAction }: LoginFormProps) {
     setUser({ ...user, [id]: value });
   };
 
-  const loginAction = () => {
-    setIncorrectLogin(loginApp(user));
-    setTimeout(() => {
-      setIncorrectLogin(false);
-    }, 2000);
+  const isValidFields = () => {
+    if (user.email === '' || user.password === '') {
+      setAlertMessage('PREENCHA TODOS OS CAMPOS');
+      setIncorrectLogin(true);
+      setTimeout(() => {
+        setIncorrectLogin(false);
+      }, 2000);
+      return false;
+    }
+
+    return true;
+  };
+
+  const loginAction = async () => {
+    if (isValidFields()) {
+      if (await loginApp(user)) {
+        setAlertMessage('USUÁRIO OU SENHA INCORRETOS');
+        setIncorrectLogin(true);
+        setTimeout(() => {
+          setIncorrectLogin(false);
+        }, 2000);
+        setUser({ ...user, password: '' });
+      }
+    }
   };
 
   return (
     <>
       <Header title="ENTRAR NA SUA CONTA" subtitle="LOGIN" backtitle="LOGIN" />
-      {incorrectLogin && <Alert text="USUÁRIO OU SENHA INCORRETOS" />}
+      {incorrectLogin && <Alert text={alertMessage} />}
       <FormControl id="email">
         <FormLabel fontSize="24px">E-mail</FormLabel>
         <Input
@@ -68,6 +88,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
           placeholder="********"
           borderColor="var(--black-color)"
           onChange={({ target }) => changeUser(target)}
+          value={user.password}
         />
       </FormControl>
       <Link
