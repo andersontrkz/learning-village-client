@@ -11,8 +11,6 @@ export const AvatarBox = ({
   avatarSize = 'sm',
   borderColor = 'var(--white-color)',
 }: AvatarBoxProps) => {
-  console.log(data);
-
   return (
     <HStack onClick={() => alert('Clicou!')}>
       <Flex>

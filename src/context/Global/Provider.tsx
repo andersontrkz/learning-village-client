@@ -12,7 +12,7 @@ type AppProviderProps = {
 
 export default function Provider({ children }: AppProviderProps) {
   const history = useHistory();
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState(false);
 
   const loginApp = async (user: { email: string; password: string }) => {
     const data = await login(user);
