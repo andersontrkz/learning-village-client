@@ -11,6 +11,8 @@ export const AvatarBox = ({
   avatarSize = 'sm',
   borderColor = 'var(--white-color)',
 }: AvatarBoxProps) => {
+  console.log(data);
+
   return (
     <HStack onClick={() => alert('Clicou!')}>
       <Flex>
@@ -30,10 +32,10 @@ export const AvatarBox = ({
                   fontFamily="Montserrat"
                   fontWeight="bold"
                 >
-                  Luana Moura
+                  {data.name}
                 </Text>
                 <Text fontSize="xs" fontFamily="Montserrat" color="var(--white-color)">
-                  CEO in startup
+                  {data.position}
                 </Text>
               </VStack>
             </HStack>
