@@ -30,12 +30,12 @@ The goal was to create the front end of a learning platform.
 
 ### ✅  Feed - News Page
 
-    - []  Create a feed page for news.
+    - [x]  Create a feed page for news.
 
 
 ### ✅  Feed - Post Page
 
-    - []  Create a feed page for posts.
+    - [x]  Create a feed page for posts.
 
 
 ## Technologies
