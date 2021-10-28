@@ -8,9 +8,11 @@ import {
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import logo from '../../assets/logos/logo.png';
+import Context from '../../context/Global/Context';
 import NavItem from '../Layout/NavItem';
 import { AvatarBox } from '../Pages/Feed/AvatarBox';
 
@@ -34,6 +36,8 @@ const LinkItems: Array<LinkItemProps> = [
 ];
 
 export default function Sidebar({ onClose, ...rest }: SidebarProps) {
+  const { userData } = useContext(Context);
+
   const history = useHistory();
 
   const checkCurrentUrl = (route: string) => {
@@ -71,7 +75,7 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
           ))}
         </Box>
         <Box s={{ base: 0, md: 6 }} mx="6" mb={{ base: 0, md: 4 }} mt={{ base: 0, md: 4 }}>
-          <AvatarBox borderColor="var(--primary-color)" />
+          <AvatarBox data={userData.user} borderColor="var(--primary-color)" />
         </Box>
       </Flex>
       <Button

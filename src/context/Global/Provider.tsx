@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import login from '../../apis/login';
+import { getAllPosts } from '../../apis/post';
 
 import Context from './Context';
 
@@ -15,8 +16,6 @@ export default function Provider({ children }: AppProviderProps) {
 
   const loginApp = async (user: { email: string; password: string }) => {
     const data = await login(user);
-    console.log(data);
-
     if (!data.message) {
       setUserData(data);
 
@@ -24,9 +23,16 @@ export default function Provider({ children }: AppProviderProps) {
     }
   };
 
+  const requestPosts = async () => {
+    const posts = await getAllPosts(userData);
+
+    return posts.data;
+  };
+
   const context = {
     loginApp,
-    userData: userData,
+    requestPosts,
+    userData,
   };
 
   return <Context.Provider value={context}>{children}</Context.Provider>;

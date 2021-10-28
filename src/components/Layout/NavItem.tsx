@@ -22,7 +22,6 @@ export default function NavItem({ icon, name, ...rest }: NavItemProps) {
         }}
         {...rest}
       >
-        {/* {console.log(rest)} */}
         <FontAwesomeIcon icon={icon} style={{ marginRight: '8px' }} color="var(--primary-color)" />
         {name}
       </Flex>
