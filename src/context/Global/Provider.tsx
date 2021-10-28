@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { CookiesProvider, useCookies } from 'react-cookie';
 import { useHistory } from 'react-router-dom';
 
 import login from '../../apis/login';
@@ -13,6 +14,7 @@ type AppProviderProps = {
 export default function Provider({ children }: AppProviderProps) {
   const history = useHistory();
   const [userData, setUserData] = useState(false);
+  const [cookies, setCookie, removeCookie] = useCookies(['credentials']);
 
   const loginApp = async (user: { email: string; password: string }) => {
     const data = await login(user);
@@ -21,6 +23,8 @@ export default function Provider({ children }: AppProviderProps) {
 
       history.push('feed');
 
+      setCookie('credentials', data);
+
       return false;
     } else {
       return true;
@@ -28,7 +32,7 @@ export default function Provider({ children }: AppProviderProps) {
   };
 
   const requestPosts = async () => {
-    const posts = await getAllPosts(userData);
+    const posts = await getAllPosts(userData || cookies.credentials);
 
     return posts.data;
   };
@@ -36,8 +40,13 @@ export default function Provider({ children }: AppProviderProps) {
   const context = {
     loginApp,
     requestPosts,
-    userData,
+    userData: userData || cookies.credentials,
+    removeCookie,
   };
 
-  return <Context.Provider value={context}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={context}>
+      <CookiesProvider>{children}</CookiesProvider>
+    </Context.Provider>
+  );
 }

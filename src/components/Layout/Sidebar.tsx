@@ -36,7 +36,7 @@ const LinkItems: Array<LinkItemProps> = [
 ];
 
 export default function Sidebar({ onClose, ...rest }: SidebarProps) {
-  const { userData } = useContext(Context);
+  const { userData, removeCookie } = useContext(Context);
 
   const history = useHistory();
 
@@ -48,6 +48,11 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
     }
 
     return 'none';
+  };
+
+  const exitApp = () => {
+    removeCookie('credentials');
+    history.push('/');
   };
 
   return (
@@ -93,7 +98,7 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
           bg: 'var(--primary-color-alt)',
           transition: '.9s',
         }}
-        onClick={() => history.push('')}
+        onClick={exitApp}
       >
         SAIR
       </Button>
