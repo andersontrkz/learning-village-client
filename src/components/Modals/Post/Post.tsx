@@ -15,8 +15,9 @@ import {
 } from '@chakra-ui/react';
 import { faChevronLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
+import { create } from '../../../apis/post';
 import Context from '../../../context/Global/Context';
 import Uploader from '../../Uploader/Uploader';
 
@@ -24,6 +25,21 @@ export const Post = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const size = useBreakpointValue({ base: 'full', lg: 'xl' });
   const { userData } = useContext(Context);
+  const [post, setPost] = useState({
+    content: '',
+    userId: userData.user.id,
+    accessToken: userData.accessToken,
+  });
+
+  const changePost = ({ id, value }: any) => {
+    setPost({ ...post, [id]: value });
+  };
+
+  const createPost = () => {
+    console.log(post);
+    create(post);
+    onClose();
+  };
 
   return (
     <Box>
@@ -76,18 +92,21 @@ export const Post = () => {
               </Text>
             </Button>
             <Text>NOVO POST</Text>
-            <Link color="#2D00F7" onClick={() => alert('Clicou')}>
+            <Link color="#2D00F7" onClick={createPost}>
               Postar
             </Link>
           </ModalHeader>
           <ModalBody d="flex" fontFamily="Montserrat" mt="4">
             <Avatar showBorder={true} size="md" src={userData.user.profileImage} />
             <Textarea
+              id="content"
               ml="4"
               resize="none"
               border="none"
               placeholder="Escreva seu post aqui..."
               h={{ base: 80, lg: 40 }}
+              onChange={({ target }) => changePost(target)}
+              maxLength={180}
             />
           </ModalBody>
           <ModalFooter>

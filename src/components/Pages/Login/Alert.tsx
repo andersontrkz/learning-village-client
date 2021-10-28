@@ -1,4 +1,4 @@
-import { Box, Flex, Progress, Text } from '@chakra-ui/react';
+import { Flex, Progress, Text } from '@chakra-ui/react';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -8,7 +8,7 @@ type AlertProps = {
 
 export default function Alert({ text }: AlertProps) {
   return (
-    <Box position="fixed" top="0">
+    <Flex position="fixed" top="0" left="0" w="100vw">
       <Flex direction="column" w="100vw" alignItems="center" mt="8">
         <Flex
           w={{ base: '70%', md: '50%' }}
@@ -24,6 +24,6 @@ export default function Alert({ text }: AlertProps) {
           <Progress size="xs" isIndeterminate width="100%" colorScheme="pink" />
         </Flex>
       </Flex>
-    </Box>
+    </Flex>
   );
 }

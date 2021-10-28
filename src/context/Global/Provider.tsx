@@ -3,7 +3,7 @@ import { CookiesProvider, useCookies } from 'react-cookie';
 import { useHistory } from 'react-router-dom';
 
 import login from '../../apis/login';
-import { getAllPosts } from '../../apis/post';
+import { getAll } from '../../apis/post';
 
 import Context from './Context';
 
@@ -32,7 +32,7 @@ export default function Provider({ children }: AppProviderProps) {
   };
 
   const requestPosts = async () => {
-    const posts = await getAllPosts(userData || cookies.credentials);
+    const posts = await getAll(userData || cookies.credentials);
 
     return posts.data;
   };
