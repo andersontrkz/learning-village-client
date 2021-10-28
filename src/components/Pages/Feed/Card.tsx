@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext, useEffect, useState } from 'react';
 
 import { getUserById } from '../../../apis/user';
+import defaultImage from '../../../assets/images/default-image.png';
 import Context from '../../../context/Global/Context';
 
 import { AvatarBox } from './AvatarBox';
@@ -38,8 +39,6 @@ function Card({ data, index }: CardProps) {
     loadCardUser();
   }, []);
 
-  const DEFAULT_IMAGE =
-    'https://wow.zamimg.com/uploads/screenshots/normal/699192-aruun-the-darkener.jpg';
   const generateCardColor = () => {
     if (index % 2 === 0) {
       return 'var(--dark-gray-color)';
@@ -63,7 +62,7 @@ function Card({ data, index }: CardProps) {
     >
       <Text position="relative" d="flex" w={{ base: '100%', md: '65%' }}>
         <Image
-          src={(data.medias && data.medias[0].file) || DEFAULT_IMAGE}
+          src={(data.medias && data.medias[0].file) || defaultImage}
           alt={`Picture of ${data && data.id}`}
           objectFit="cover"
           w="100%"
