@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 type GlobalContext = {
   userData: any;
-  loginApp: (user: any) => void;
+  loginApp: (user: any) => any;
   requestPosts: () => any;
 };
 

@@ -20,6 +20,10 @@ export default function Provider({ children }: AppProviderProps) {
       setUserData(data);
 
       history.push('feed');
+
+      return false;
+    } else {
+      return true;
     }
   };
 

@@ -15,6 +15,7 @@ import { useContext, useState } from 'react';
 
 import Context from '../../../context/Global/Context';
 
+import Alert from './Alert';
 import Header from './Header';
 
 type LoginFormProps = {
@@ -23,6 +24,7 @@ type LoginFormProps = {
 
 export default function LoginForm({ setAction }: LoginFormProps) {
   const { loginApp } = useContext(Context);
+  const [incorrectLogin, setIncorrectLogin] = useState(false);
 
   const [user, setUser] = useState({
     email: '',
@@ -33,9 +35,17 @@ export default function LoginForm({ setAction }: LoginFormProps) {
     setUser({ ...user, [id]: value });
   };
 
+  const loginAction = () => {
+    setIncorrectLogin(loginApp(user));
+    setTimeout(() => {
+      setIncorrectLogin(false);
+    }, 2000);
+  };
+
   return (
     <>
       <Header title="ENTRAR NA SUA CONTA" subtitle="LOGIN" backtitle="LOGIN" />
+      {incorrectLogin && <Alert text="USUÁRIO OU SENHA INCORRETOS" />}
       <FormControl id="email">
         <FormLabel fontSize="24px">E-mail</FormLabel>
         <Input
@@ -87,7 +97,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
           bg: 'var(--primary-color-alt)',
           transition: '.9s',
         }}
-        onClick={() => loginApp(user)}
+        onClick={loginAction}
       >
         ENTRAR
       </Button>

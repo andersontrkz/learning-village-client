@@ -74,7 +74,7 @@ export const Login = () => {
           </>
         </Stack>
       ) : (
-        <Alert />
+        <Alert text="SENHA REDEFINIDA COM SUCESSO" />
       )}
     </Stack>
   );
