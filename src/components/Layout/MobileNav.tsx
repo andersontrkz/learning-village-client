@@ -15,12 +15,16 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         borderRightColor="var(--primary-color)"
         d={{ base: 'flex', md: 'none' }}
         onClick={onOpen}
+        _hover={{
+          cursor: 'pointer',
+        }}
       >
         <IconButton
           aria-label="open menu"
           pl="8"
           bg="var(--dark-gray-color)"
           icon={<FontAwesomeIcon icon={faBars} color="var(--primary-color)" />}
+          variant="unstyled"
         />
         <Text color="var(--white-color)" ml="4" mr="4">
           MENU

@@ -90,7 +90,7 @@ export const Post = () => {
               resize="none"
               border="none"
               placeholder="Escreva seu post aqui..."
-              h="40"
+              h={{ base: 80, lg: 40 }}
             />
           </ModalBody>
           <ModalFooter>
