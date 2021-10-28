@@ -65,7 +65,7 @@ export default function LoginForm({ setAction }: LoginFormProps) {
   return (
     <>
       <Header title="ENTRAR NA SUA CONTA" subtitle="LOGIN" backtitle="LOGIN" />
-      {incorrectLogin && <Alert text={alertMessage} />}
+      {incorrectLogin && <Alert type="info" text={alertMessage} />}
       <FormControl id="email">
         <FormLabel fontSize="24px">E-mail</FormLabel>
         <Input
