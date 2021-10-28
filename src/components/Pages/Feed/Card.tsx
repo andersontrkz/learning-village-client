@@ -55,7 +55,7 @@ function Card({ data, index }: CardProps) {
     <Flex
       direction={{ base: 'column', md: 'row' }}
       w={{ base: '100%', md: '80%' }}
-      h={{ base: 'auto', md: '288px' }}
+      h={{ base: 'auto', md: '360px', lg: '288px' }}
       m={{ base: '8px auto 40px', md: '8px auto 18px', lg: '12px auto 24px' }}
       alignItems={{ base: 'center', md: 'unset' }}
       color="var(--white-color)"

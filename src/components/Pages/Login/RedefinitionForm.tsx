@@ -52,6 +52,7 @@ export default function RedefinitionForm({ setAction }: RedefinitionFormFormProp
             bg: 'var(--primary-color-alt)',
             transition: '.9s',
           }}
+          my={{ base: 2, md: 4 }}
           onClick={reloadLogin}
         >
           REDEFINIR A SENHA

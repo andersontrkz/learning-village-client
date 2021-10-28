@@ -12,6 +12,7 @@ export default function RecoveryForm({ setAction }: RecoveryFormProps) {
   return (
     <>
       <Header title="REDEFINIR A SENHA" subtitle="E-MAIL" backtitle="SENHA" />
+      <br />
       <Text textAlign="center" fontSize="13px" fontFamily="Montserrat">
         Insira seu e-mail cadastrado na plataforma. Enviaremos um código para seu e-mail para a
         redefinição de senha.
@@ -38,6 +39,7 @@ export default function RecoveryForm({ setAction }: RecoveryFormProps) {
             bg: 'var(--primary-color-alt)',
             transition: '.9s',
           }}
+          my={{ base: 2, md: 4 }}
           onClick={() => setAction('confirm')}
         >
           REDEFINIR A SENHA

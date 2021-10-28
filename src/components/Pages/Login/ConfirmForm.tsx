@@ -12,6 +12,7 @@ export default function ConfirmForm({ setAction }: ConfirmFormFormProps) {
   return (
     <>
       <Header title="REDEFINIR A SENHA" subtitle="VERIFIQUE SEU E-MAIL" backtitle="SENHA" />
+      <br />
       <Text textAlign="center" fontSize="13px" fontFamily="Montserrat">
         Enviamos um e-mail com o código de confirmação para a seuemail@learningvillage.com
       </Text>
@@ -39,6 +40,7 @@ export default function ConfirmForm({ setAction }: ConfirmFormFormProps) {
             bg: 'var(--primary-color-alt)',
             transition: '.9s',
           }}
+          my={{ base: 2, md: 4 }}
           onClick={() => setAction('redefinition')}
         >
           CONFIRMAR O CÓDIGO
