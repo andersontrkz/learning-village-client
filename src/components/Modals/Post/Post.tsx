@@ -15,12 +15,15 @@ import {
 } from '@chakra-ui/react';
 import { faChevronLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useContext } from 'react';
 
+import Context from '../../../context/Global/Context';
 import Uploader from '../../Uploader/Uploader';
 
 export const Post = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const size = useBreakpointValue({ base: 'full', lg: 'xl' });
+  const { userData } = useContext(Context);
 
   return (
     <Box>
@@ -78,13 +81,7 @@ export const Post = () => {
             </Link>
           </ModalHeader>
           <ModalBody d="flex" fontFamily="Montserrat" mt="4">
-            <Avatar
-              showBorder={true}
-              size="md"
-              src={
-                'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-              }
-            />
+            <Avatar showBorder={true} size="md" src={userData.user.profileImage} />
             <Textarea
               ml="4"
               resize="none"
